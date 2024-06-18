@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero">
+                <img src="me.jpg" alt="Hero Image">
+                <h1>DIVINO SABOR</h1>
+                <p>BEM VINDOS, E DESFRUTEM DO CATÁLOGO </p>
+            </div>
+            <style>
+        .slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+            width: 100%;
+            border-radius: 20px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: pink;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* Estilo para os pontos indicadores do slideshow */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+            background-color: #d86c98e3;
+        }
+    </style>
+<div class="slideshow-container">
+    <!-- Slides de imagens -->
+    <div class="mySlides">
+        <img src="./medias_fotos/Tabela_1.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+        <img src="about.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+        <img src="p5.jpg" style="width:100%">
+    </div>
+
+    <!-- Botões de navegação -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Pontos indicadores do slideshow -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Função para avançar/retroceder slides
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Função para mostrar slide atual
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        
+        if (n > slides.length) { slideIndex = 1; }
+        if (n < 1) { slideIndex = slides.length; }
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+            
+            <!--  <div class="recent-projects">
+                <h2>Recent Projects</h2>
+                <ul>
+                    <li><a href="#project1"><img src="p3.jpg" alt="18/06/2024"></img></a></li>
+                    <li><a href="#project2"><img src="p2.jpg" alt=""></img></a></li>
+                    <li><a href="#project3"><img src="about.jpg" alt=""></img></a></li>
+                </ul>
+            </div>
+        </section> -->
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-categories">
+           <!--  <button>All</button>
+                <button>Web Development</button>
+                <button>Design</button>
+                <button>Other</button> -->
+            </div>
+            <div class="project-list">
+                <div class="project-item">
+                    <img src="p1.jpg" alt="Project Thumbnail">
+                    <h3>slk</h3>
+                    <p>qualquer coisa escrita.</p>
+                </div>
+                <div class="project-item">
+                    <img src="p2.jpg" alt="Project Thumbnail">
+                    <h3>slk</h3>
+                    <p>qualquer coisa escrita.</p>
+                </div>
+                <div class="project-item">
+                    <img src="p3.jpg" alt="Project Thumbnail">
+                    <h3>slk</h3>
+                    <p>qualquer coisa escrita.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="about.jpg" alt="About Image">
+                <p>Hi, I'm John Doe, a passionate web developer and designer. I have been working in the industry for over 10 years, specializing in creating responsive and user-friendly websites. My work focuses on achieving the best user experience and delivering quality projects.</p>
+                <a href="resume.pdf" download>Download VC</a>
+                <div class="personal-details">
+                    <p>Endereço: rdf_casa nº274</p>
+                    <p>Localização: Chimoio, Mozambique</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p>Phone: (+258) 877867084</p>
+                <p>Email: pitrossricard@gmail.com</p>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><img src="walogo.png" alt="Facebook"></a>
+                <a href="https://twitter.com" target="_blank"><img src="iglogo.png" alt="Twitter"></a>
+                <a href="https://linkedin.com" target="_blank"><img src="inlogo.png" alt="LinkedIn"></a>
+                <a href="https://github.com" target="_blank"><img src="hub.png" alt="GitHub"></a>
+            </div>
+        </section>
+    </main>
+
+    <footer><!-- 
+        <div class="devs">
+            <h5>DESENVOLVEDORES</h5>
+            <p>Pitross Ricardo</p>
+            <p>Herman Carlos</p>
+            <p>ZYLYHECKER3</p>
+            <p>Diservv</p>
+        </div>
+        <div class="parceiro">
+            <h5>PARCEIROS</h5>
+            <p>DSV</p>
+            <p>Divino Sabor</p>
+            <p>Kapenga motors</p>
+        </div>
+        <div class="FAQ">
+            <h5>FAQ</h5>
+            <p>Quem somos?</p>
+            <p>Onde nos encontrar?</p>
+            <p>Quer trabalhar com nós?</p>
+            <p>Quai sao os outros projetos?</p>
+        </div> -->
+    </footer>
+</body>
+</html>
